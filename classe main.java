@@ -1,24 +1,20 @@
-import javax.swing.JFrame;
+import javax.swing.*;
 
-public class App {
-    public static void main(String[] args) throws Exception {
-        int boardWidth = 750;
-        int boardHeight = 250;
-
+public class MainFrame extends JFrame {
+    public MainFrame() {
+        setTitle("Pikachu Dino Game");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
     
-        JFrame frame = new JFrame("Pikachu Game");
-
-       
-        frame.setVisible(true);
-        frame.setSize(boardWidth, boardHeight);
-        frame.setLocationRelativeTo(null);
-        frame.setResizable(false);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-
-        PikachuDinossauro pikachuDinossauro = new PikachuDinossauro();
-        frame.add(pikachuDinossauro);
-        frame.pack();
-        frame.setVisible(true);
+        GamePanel gamePanel = new GamePanel();
+        add(gamePanel);
+        
+        pack();
+        setLocationRelativeTo(null); 
+        setVisible(true);
+    }
+    
+    public static void main(String[] args) {
+        new MainFrame();
     }
 }
